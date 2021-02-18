@@ -51,6 +51,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .gradient-fill {
