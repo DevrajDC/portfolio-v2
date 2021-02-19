@@ -9,17 +9,21 @@
 
 html {
   width: 100%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
 body {
   background: #0a0a0a;
   width: 100% !important;
   height: 100%;
   color: white;
-  overflow-x: hidden !important;
   font-family: "Poppins", sans-serif;
 }
+
+section {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 14px;
 }
@@ -34,6 +38,7 @@ body {
   background: #3e65b8;
   color: #fff;
 }
+
 // =============== Color Styles =======================
 .gradient-text {
   background: linear-gradient(122.4deg, #40b3ff 9.03%, #407bff 86.36%);
@@ -275,9 +280,6 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    overflow-x: hidden !important;
-  }
   .nav-links {
     position: absolute;
     right: 0px;

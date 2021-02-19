@@ -10,7 +10,6 @@
 
 html {
   width: 100%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -19,8 +18,11 @@ body {
   width: 100% !important;
   height: 100%;
   color: white;
-  overflow-x: hidden !important;
   font-family: "Poppins", sans-serif;
+}
+
+section {
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -353,9 +355,6 @@ nav .nav-container .nav-links a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    overflow-x: hidden !important;
-  }
   .nav-links {
     position: absolute;
     right: 0px;

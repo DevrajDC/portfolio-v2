@@ -199,10 +199,7 @@
       var grid = new Muuri("#grid", {
         dragEnabled: true,
       });
-      window.addEventListener("load", function () {
-        grid.refreshItems().layout();
-      });
-      window.addEventListener("resize", function () {
+      const lockDragOnPhone = () => {
         if (window.innerWidth <= 600) {
           grid.getItems().forEach((item) => {
             if (!item._drag) return;
@@ -216,7 +213,12 @@
             item._drag = new Muuri.ItemDrag(item);
           });
         }
+      };
+      window.addEventListener("load", function () {
+        grid.refreshItems().layout();
       });
+      lockDragOnPhone();
+      window.addEventListener("resize", lockDragOnPhone);
 
       document.querySelectorAll(".grid-filter-btns .filter").forEach((item) => {
         item.addEventListener("click", (e) => {
