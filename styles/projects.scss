@@ -103,6 +103,10 @@ img {
   pointer-events: all;
 }
 
+.project {
+  height: 100% !important;
+}
+
 .overlay-details {
   transition: 0.3s;
   transform: translateY(50%);

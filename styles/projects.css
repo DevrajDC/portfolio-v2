@@ -1091,6 +1091,10 @@ img {
   pointer-events: all;
 }
 
+.project {
+  height: 100% !important;
+}
+
 .overlay-details {
   -webkit-transition: 0.3s;
   transition: 0.3s;
