@@ -80,15 +80,9 @@ window.addEventListener("scroll", (e) => {
       document.querySelector(".bottom-navbar a:nth-child(2)")
     );
   }
-  if (window.scrollY > document.querySelector("#services").offsetTop - 100) {
-    highlight(
-      document.querySelector(".nav-links li:nth-child(4) a"),
-      document.querySelector(".bottom-navbar a:nth-child(3)")
-    );
-  }
   if (window.scrollY > document.querySelector("#projects").offsetTop - 100) {
     highlight(
-      document.querySelector(".nav-links li:nth-child(5) a"),
+      document.querySelector(".nav-links li:nth-child(4) a"),
       document.querySelector(".bottom-navbar a:nth-child(4)")
     );
   }
