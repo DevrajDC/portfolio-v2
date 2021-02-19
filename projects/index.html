@@ -32,14 +32,14 @@
     <div class="nav-overlay"></div>
     <!-- Projects Section -->
     <section id="projects-section">
-      <div class="section-heading-text">PROJECTS</div>
+      <div class="section-heading-text projects-head">PROJECTS</div>
       <div class="grid-filter-btns container">
         <span class="filter selected" project-type="">All</span>
         <span class="filter" project-type="webdev">Web Dev</span>
         <span class="filter" project-type="uiux">UI/UX Design</span>
       </div>
       <div class="container">
-        <div class="grid projects-grid" id="grid">
+        <div class="grid projects-grid">
           <div class="item" project-type="uiux">
             <div class="item-content">
               <div class="project">
@@ -189,36 +189,108 @@
       </div>
     </section>
 
+    <section id="artworks-section">
+      <div class="container">
+        <div class="section-heading-text artworks-head">ARTWORKS</div>
+        <div class="grid artworks-grid">
+          <div class="item">
+            <div class="item-content">
+              <img
+                src="https://devraj-chatribin.netlify.app/images/art/rashmika.png"
+              />
+            </div>
+          </div>
+          <div class="item" project-type="webdev">
+            <div class="item-content">
+              <img
+                src="https://devraj-chatribin.netlify.app/images/art/saloni.jpg"
+              />
+            </div>
+          </div>
+          <div class="item" project-type="webdev">
+            <div class="item-content">
+              <img
+                src="https://devraj-chatribin.netlify.app/images/art/modelface.jpg"
+              />
+            </div>
+          </div>
+          <div class="item" project-type="webdev">
+            <div class="item-content">
+              <img
+                src="https://devraj-chatribin.netlify.app/images/art/PRIYANKA%20FINAL.png"
+              />
+            </div>
+          </div>
+          <div class="item" project-type="webdev">
+            <div class="item-content">
+              <img
+                src="https://devraj-chatribin.netlify.app/images/art/medicinalplants.jpg"
+              />
+            </div>
+          </div>
+          <div class="item" project-type="webdev">
+            <div class="item-content">
+              <img
+                src="https://devraj-chatribin.netlify.app/images/art/eyes2.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Muuri and Web Animations Polyfill -->
     <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
 
     <!-- Muuri Init -->
     <script>
-      var grid = new Muuri("#grid", {
-        dragEnabled: true,
-      });
+      var projectsGrid = new Muuri(".projects-grid", {
+          dragEnabled: true,
+        }),
+        artworksGrid = new Muuri(".artworks-grid", {
+          dragEnabled: true,
+        });
       const lockDragOnPhone = () => {
         if (window.innerWidth <= 600) {
-          grid.getItems().forEach((item) => {
+          //Lock Project Drag Sort on Mobile
+          projectsGrid.getItems().forEach((item) => {
+            if (!item._drag) return;
+            item._drag.destroy();
+            item._drag = null;
+          });
+
+          //Lock Artworks Drag Sort on Mobile
+          artworksGrid.getItems().forEach((item) => {
             if (!item._drag) return;
             item._drag.destroy();
             item._drag = null;
           });
         } else {
           // Enable drag for all items.
-          grid.getItems().forEach((item) => {
+          //Unlock Projects Drag Sort on Desktop
+          projectsGrid.getItems().forEach((item) => {
+            if (item._drag) return;
+            item._drag = new Muuri.ItemDrag(item);
+          });
+
+          //Unlock Artworks Drag Sort on Desktop
+          artworksGrid.getItems().forEach((item) => {
             if (item._drag) return;
             item._drag = new Muuri.ItemDrag(item);
           });
         }
       };
       window.addEventListener("load", function () {
-        grid.refreshItems().layout();
+        //Initiate Muuri when projects loaded
+        projectsGrid.refreshItems().layout();
+        //Initiate Muuri when artworks loaded
+        artworksGrid.refreshItems().layout();
       });
       lockDragOnPhone();
       window.addEventListener("resize", lockDragOnPhone);
 
+      //Filter projects
       document.querySelectorAll(".grid-filter-btns .filter").forEach((item) => {
         item.addEventListener("click", (e) => {
           document
@@ -227,7 +299,7 @@
           item.classList.add("selected");
 
           let filterFieldValue = item.getAttribute("project-type");
-          grid.filter(function (item) {
+          projectsGrid.filter(function (item) {
             var element = item.getElement();
             var isFilterMatch = !filterFieldValue
               ? true

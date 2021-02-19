@@ -11,8 +11,10 @@ html {
   width: 100%;
 }
 
-.section-heading-text {
-  margin-bottom: 0 !important;
+#projects-section {
+  .section-heading-text {
+    margin-bottom: 0;
+  }
 }
 
 .grid-filter-btns {
