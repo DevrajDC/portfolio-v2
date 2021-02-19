@@ -67,6 +67,7 @@ section {
 img {
   width: 100%;
   border-radius: 8px;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 768px) {
@@ -115,6 +116,10 @@ img {
   transform: translateY(0%);
 }
 
+.project:hover img {
+  transform: scale(1.1);
+}
+
 .project-info-overlay {
   opacity: 0;
   width: 100%;
@@ -123,6 +128,7 @@ img {
   transform: translateY(-100%);
   transition: 0.3s;
   height: 100%;
+  width: 100%;
   padding: 14px;
   display: flex;
   flex-direction: column;

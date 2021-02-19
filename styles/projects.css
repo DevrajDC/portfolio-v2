@@ -1045,6 +1045,8 @@ section {
 img {
   width: 100%;
   border-radius: 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 768px) {
@@ -1101,6 +1103,11 @@ img {
           transform: translateY(0%);
 }
 
+.project:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .project-info-overlay {
   opacity: 0;
   width: 100%;
@@ -1111,6 +1118,7 @@ img {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   height: 100%;
+  width: 100%;
   padding: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
