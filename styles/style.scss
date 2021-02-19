@@ -39,6 +39,14 @@ section {
   color: #fff;
 }
 
+// =========================== Removed Blue Haptic Touch Box =================
+
+@media screen and (max-width: 480px) {
+  * {
+    cursor: default !important;
+  }
+}
+
 // =============== Color Styles =======================
 .gradient-text {
   background: linear-gradient(122.4deg, #40b3ff 9.03%, #407bff 86.36%);
