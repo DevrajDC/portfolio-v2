@@ -95,9 +95,7 @@ img {
 
 .project {
   overflow: hidden;
-  //   &::before {
-  //     content: "";
-  //   }
+  border-radius: 8px;
 }
 
 .project:hover .project-info-overlay {
