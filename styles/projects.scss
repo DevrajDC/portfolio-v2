@@ -11,9 +11,20 @@ html {
   width: 100%;
 }
 
+.secondary-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+.section-heading-text {
+  margin-bottom: 60px;
+}
+section {
+  padding: 80px 20px;
+}
 #projects-section {
   .section-heading-text {
     margin-bottom: 0;
+    margin-top: 60px;
   }
 }
 
@@ -106,6 +117,7 @@ img {
 
 .project-info-overlay {
   opacity: 0;
+  width: 100%;
   pointer-events: none;
   position: absolute;
   transform: translateY(-100%);
@@ -120,4 +132,14 @@ img {
     #000000 10.9%,
     rgba(22, 32, 52, 0.2) 100%
   );
+}
+
+footer {
+  .container {
+    .right {
+      .footer-svg {
+        width: min-content;
+      }
+    }
+  }
 }

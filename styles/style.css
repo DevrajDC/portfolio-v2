@@ -862,6 +862,7 @@ footer .container .left .social-links .socials {
 }
 
 footer .container .left .social-links .socials .icon {
+  cursor: pointer;
   margin: 10px 0;
   padding: 10px;
   background: linear-gradient(122.4deg, #40b3ff 9.03%, #407bff 86.36%);
