@@ -371,6 +371,9 @@
         artworksGrid = new Muuri(".artworks-grid", {
           dragEnabled: true,
         });
+
+        lockDragOnPhone(projectsGrid);
+        lockDragOnPhone(artworksGrid);
         //Initiate Muuri when projects loaded
         projectsGrid._resizeHandler();
         //Initiate Muuri when artworks loaded
